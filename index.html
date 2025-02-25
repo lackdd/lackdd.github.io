@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marius Soon Portfolio</title>
+    <title>Lackdd's Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -63,6 +63,31 @@
             background: #007bff;
         }
 
+        .project-list {
+            margin-top: 30px;
+            text-align: left;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .project-item {
+            background: #222;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .project-item a {
+            color: #1e90ff;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-item a:hover {
+            color: #007bff;
+        }
+
         footer {
             margin-top: 50px;
             font-size: 0.9rem;
@@ -74,12 +99,48 @@
 
     <div class="container">
         <h1>Hey, I'm Marius Soon</h1>
-        <p>Welcome to my portfolio!</p>
+        <p>Welcome to my portfolio! Here are some of my key projects.</p>
 
-        <a href="https://github.com/lackdd?tab=repositories" class="btn btn-primary" target="_blank">View My Projects</a>
+        <!-- Featured Projects Section -->
+        <h2>🚀 Featured Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <a href="https://github.com/lackdd/racetrack" target="_blank">🏁 Racetrack - Real-Time Racing System</a>
+                <p>A real-time system for Beachside Racetrack, enabling race preparation, race control, and spectator updates.</p>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/lackdd/match-me" target="_blank">💖 Match-Me</a>
+                <p>A matchmaking app that connects users based on shared interests and real-time preferences.</p>
+            </div>
+        </div>
+
+        <!-- Other Projects Section -->
+        <h2>📌 Other Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <a href="https://github.com/lackdd/movieapi" target="_blank">🎬 MovieAPI</a>
+                <p>A Spring Boot movie database API with filtering, pagination, and actor-genre relationships.</p>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/lackdd/itinerary-prettifier" target="_blank">🛫 Itinerary Prettifier</a>
+                <p>A command-line tool that formats raw flight itinerary data into a customer-friendly format.</p>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/lackdd/telia-tv-app" target="_blank">📺 Telia TV App</a>
+                <p>A React Native app for streaming TV content with enhanced UI and additional metadata display.</p>
+            </div>
+        </div>
+
+        <br>
+        <a href="https://github.com/lackdd?tab=repositories" class="btn btn-secondary" target="_blank">🔗 View All Projects</a>
+
     </div>
 
     <footer>
+        <p>© 2025 Marius Soon</p>
     </footer>
 
 </body>
