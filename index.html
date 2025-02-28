@@ -117,7 +117,31 @@
         <div class="project-list">
             <div class="project-item">
                 <a href="https://github.com/lackdd/racetrack" target="_blank">🏁 Racetrack - Real-Time Racing System</a>
-                <button class="try-button" onclick="showPopup()">Try it out!</button>
+                <button class="try-button" onclick="showPopup('racetrack')">Try it out!</button>
+            </div>
+            <div class="project-item">
+                <a href="https://github.com/lackdd/match-me" target="_blank">💖 Match-Me (Ongoing)</a>
+                <button class="try-button" onclick="showPopup('match-me')">Try it out!</button>
+            </div>
+        </div>
+
+        <!-- Other Projects Section -->
+        <h2>📌 Other Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <a href="https://github.com/lackdd/movieapi" target="_blank">🎬 MovieAPI</a>
+            </div>
+            <div class="project-item">
+                <a href="https://github.com/lackdd/itinerary-prettifier" target="_blank">🛫 Itinerary Prettifier</a>
+            </div>
+            <div class="project-item">
+                <a href="https://github.com/lackdd/telia-tv-app" target="_blank">📺 TV App UI</a>
+            </div>
+            <div class="project-item">
+                <a href="https://github.com/lackdd/cypher-notes" target="_blank">🔐 Cypher Notes</a>
+            </div>
+            <div class="project-item">
+                <a href="https://github.com/lackdd/notes-editor" target="_blank">📝 Notes Editor</a>
             </div>
         </div>
     </div>
@@ -129,7 +153,10 @@
     </div>
 
     <script>
-        function showPopup() {
+        let selectedProject = '';
+
+        function showPopup(project) {
+            selectedProject = project;
             document.getElementById("popup").style.display = "block";
         }
 
@@ -138,10 +165,11 @@
         }
 
         function proceedToSite() {
-            window.location.href = "https://racetrack-ns5c.onrender.com/";
+            if (selectedProject === 'racetrack') {
+                window.location.href = "https://racetrack-ns5c.onrender.com/";
+            }
         }
     </script>
 </body>
 </html>
-
 
