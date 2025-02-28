@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lackdd's Portfolio</title>
+    <title>Marius Soon's Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -49,7 +49,7 @@
             border-radius: 8px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: left;
             flex-direction: column;
         }
 
@@ -104,6 +104,13 @@
             border: none;
             cursor: pointer;
         }
+      
+      .project-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 
         .proceed {
             background: #32CD32;
@@ -124,16 +131,20 @@
         <h2>🚀 Featured Projects</h2>
         <div class="project-list">
             <div class="project-item">
+              <div class="project-title">
                 <a href="https://github.com/lackdd/racetrack" target="_blank">🏁 Racetrack - Real-Time Racing System</a>
+              <button class="try-btn" onclick="openModal('racetrack')">Try it out!</button>
+              </div>
                 <p>A real-time system for car races, where users can create, start, control and spectate races in various ways.</p>
                 <p>Javascript | Node.js | React | Mongodb | Ngrok | Socket.io | Express</p>
-                <button class="try-btn" onclick="openModal('racetrack')">Try it out!</button>
             </div>
             <div class="project-item">
-                <a href="https://github.com/lackdd/match-me" target="_blank">💖 Match-Me (Ongoing)</a>
+                <div class="project-title">
+        <a href="https://github.com/lackdd/match-me" target="_blank">💖 Match-Me (Ongoing)</a>
+        <button class="try-btn" onclick="openModal('match-me')">Try it out!</button>
+    </div>
                 <p>A matchmaking app called Jammer that connects users based on mutual music interests. Features left/right swiping, matching datapoints like genres, methods (singing, instruments etc).</p>
                 <p>Javascript | Java | React | PostgreSQL | Spring | Spring Security | Socket.io | Cloudinary | Figma</p>
-                <button class="try-btn" onclick="openModal('match-me')">Try it out!</button>
             </div>
         </div>
 
@@ -195,4 +206,3 @@
     </script>
 </body>
 </html>
-
