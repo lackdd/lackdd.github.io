@@ -77,12 +77,12 @@ p {
     font-weight: bold;
     padding: 8px 15px;
     border-radius: 6px;
-    transition: 0.3s ease;
+    transition: transform 0.2s ease, font-size 0.2s ease;
 }
 
 .try-btn:hover {
-    background: #1e90ff;
-    color: white;
+    transform: scale(1.1);
+    font-size: 1.1rem;
 }
 
 .project-title {
