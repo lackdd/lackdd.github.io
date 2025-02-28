@@ -35,34 +35,6 @@
             color: #bbb;
         }
 
-        .btn {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-size: 1rem;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #ff4757;
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: #e84118;
-        }
-
-        .btn-secondary {
-            background: #1e90ff;
-            color: #fff;
-        }
-
-        .btn-secondary:hover {
-            background: #007bff;
-        }
-
         .project-list {
             margin-top: 30px;
             text-align: left;
@@ -75,6 +47,10 @@
             padding: 15px;
             margin: 10px 0;
             border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
         }
 
         .project-item a {
@@ -88,36 +64,79 @@
             color: #007bff;
         }
 
-        footer {
-            margin-top: 50px;
-            font-size: 0.9rem;
-            color: #777;
+        .try-btn {
+            background: transparent;
+            border: none;
+            color: #1e90ff;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .try-btn:hover {
+            color: #007bff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .modal button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .proceed {
+            background: #32CD32;
+            color: white;
+        }
+
+        .cancel {
+            background: #ff4757;
+            color: white;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
         <h1>Hey, I'm Marius Soon</h1>
         <p>Welcome to my portfolio! Here are some of my key projects.</p>
 
-        <!-- Featured Projects Section -->
         <h2>🚀 Featured Projects</h2>
         <div class="project-list">
             <div class="project-item">
                 <a href="https://github.com/lackdd/racetrack" target="_blank">🏁 Racetrack - Real-Time Racing System</a>
                 <p>A real-time system for car races, where users can create, start, control and spectate races in various ways.</p>
-                <p>Javascript | Node.js | React | Mongodb | Ngrok | Socket.io | Express </p>
+                <p>Javascript | Node.js | React | Mongodb | Ngrok | Socket.io | Express</p>
+                <button class="try-btn" onclick="openModal('racetrack')">Try it out!</button>
             </div>
-
             <div class="project-item">
                 <a href="https://github.com/lackdd/match-me" target="_blank">💖 Match-Me (Ongoing)</a>
-                <p>A matchmaking app called Jammer that connects users based on mutual music interests. Features left/right swiping, matching datapoints like genres, methods (singing, instruments etc) </p>
-                <p>Javascript | Java | React | PostgreSQL | Spring | Spring Security | Socket.io | Cloudinary | Figma </p>
+                <p>A matchmaking app called Jammer that connects users based on mutual music interests. Features left/right swiping, matching datapoints like genres, methods (singing, instruments etc).</p>
+                <p>Javascript | Java | React | PostgreSQL | Spring | Spring Security | Socket.io | Cloudinary | Figma</p>
+                <button class="try-btn" onclick="openModal('match-me')">Try it out!</button>
             </div>
         </div>
 
-        <!-- Other Projects Section -->
         <h2>📌 Other Projects</h2>
         <div class="project-list">
             <div class="project-item">
@@ -125,41 +144,55 @@
                 <p>A Spring Boot movie database API with filtering, pagination, and actor-genre relationships.</p>
                 <p>Java | Spring</p>
             </div>
-
             <div class="project-item">
                 <a href="https://github.com/lackdd/itinerary-prettifier" target="_blank">🛫 Itinerary Prettifier</a>
                 <p>A command-line tool that formats raw flight itinerary data into a customer-friendly format.</p>
                 <p>Java</p>
             </div>
-
             <div class="project-item">
                 <a href="https://github.com/lackdd/telia-tv-app" target="_blank">📺 TV App UI</a>
-                <p>A pet project, where i created a UI for an android TV app in android studio.</p>
+                <p>A pet project where I created a UI for an Android TV app in Android Studio.</p>
                 <p>Kotlin</p>
             </div>
-
             <div class="project-item">
                 <a href="https://github.com/lackdd/cypher-notes" target="_blank">🔐 Cypher Notes</a>
                 <p>A secure note-taking app with encryption to protect sensitive information.</p>
                 <p>Golang</p>
             </div>
-
             <div class="project-item">
                 <a href="https://github.com/lackdd/notes-editor" target="_blank">📝 Notes Editor</a>
                 <p>A minimalist text editor with markdown support and real-time saving.</p>
                 <p>Golang</p>
             </div>
         </div>
-
-        <br>
-        <a href="https://github.com/lackdd?tab=repositories" class="btn btn-secondary" target="_blank">🔗 View All Projects</a>
-
     </div>
 
-    <footer>
-        <p>© 2025 Marius Soon</p>
-    </footer>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <p>This site may take 20-30 seconds to load. Thank you for your patience!</p>
+            <button class="proceed" id="proceed-btn">Proceed</button>
+            <button class="cancel" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
 
+    <script>
+        let currentProject = '';
+        function openModal(project) {
+            currentProject = project;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        document.getElementById('proceed-btn').addEventListener('click', function() {
+            if (currentProject === 'racetrack') {
+                window.location.href = 'https://racetrack-ns5c.onrender.com/';
+            }
+            closeModal();
+        });
+    </script>
 </body>
 </html>
 
