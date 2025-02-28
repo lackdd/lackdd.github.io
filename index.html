@@ -58,7 +58,6 @@
             font-size: 1.1rem;
             text-decoration: none;
             font-weight: bold;
-            text-align: left;
         }
 
         .project-item a:hover {
@@ -67,18 +66,14 @@
 
         .try-btn {
             background: transparent;
-            border: 1px solid #1e90ff;
+            border: none;
             color: #1e90ff;
             font-size: 1rem;
             cursor: pointer;
             font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: 0.3s;
         }
 
         .try-btn:hover {
-            background: #1e90ff;
             color: #007bff;
         }
 
@@ -130,16 +125,15 @@
         <div class="project-list">
             <div class="project-item">
                 <a href="https://github.com/lackdd/racetrack" target="_blank">🏁 Racetrack - Real-Time Racing System</a>
-                <button class="try-btn" onclick="openModal('racetrack')">Try it out!</button>
                 <p>A real-time system for car races, where users can create, start, control and spectate races in various ways.</p>
                 <p>Javascript | Node.js | React | Mongodb | Ngrok | Socket.io | Express</p>
-            
+                <button class="try-btn" onclick="openModal('racetrack')">Try it out!</button>
             </div>
             <div class="project-item">
                 <a href="https://github.com/lackdd/match-me" target="_blank">💖 Match-Me (Ongoing)</a>
-                <button class="try-btn" onclick="openModal('match-me')">Try it out!</button>
                 <p>A matchmaking app called Jammer that connects users based on mutual music interests. Features left/right swiping, matching datapoints like genres, methods (singing, instruments etc).</p>
                 <p>Javascript | Java | React | PostgreSQL | Spring | Spring Security | Socket.io | Cloudinary | Figma</p>
+                <button class="try-btn" onclick="openModal('match-me')">Try it out!</button>
             </div>
         </div>
 
@@ -201,5 +195,4 @@
     </script>
 </body>
 </html>
-
 
